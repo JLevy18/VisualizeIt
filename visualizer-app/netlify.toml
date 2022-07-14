@@ -1,7 +1,4 @@
 [[redirects]]
 from = "/*"
-to = "/:splat"
-status = 301
-force = false
-query = {path = ":path"}
-conditions = {Language = ["en"], Country = ["US"], Role = ["admin"]}
+to = "/index.html"
+status = 200
