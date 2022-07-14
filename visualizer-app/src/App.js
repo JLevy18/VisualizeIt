@@ -1,28 +1,20 @@
 import './styles/App.css';
+import  { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './components/Home';
+import SortingApp from './components/SortingApp';
+import PathfindingApp from './components/PathfindingApp';
 
 function App() {
   return (
-    <div className="App">
-
-      <h1>
-        VisualizeIt
-      </h1>
-      
-
-      <div className='content'>
-        <div className='algoGrid'>
-
-          <div className='gridCard'>
-            <h1>Sorting</h1>
-          </div>
-
-          <div className='gridCard'>
-            <h1>Pathfinding</h1>
-          </div>
-
-        </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/sorting' element={<SortingApp/>}></Route>
+          <Route path='/pathfinding' element={<PathfindingApp/>}></Route>
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 
