@@ -4,7 +4,7 @@
 
 @layer base {
 
-    h1 {
+    .App h1 {
         @apply select-none text-7xl text-center text-shadow-md tracking-widest font-semibold py-16
         
         text-neutral-900

@@ -1,8 +1,8 @@
 import './styles/App.css';
 import  { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './components/Home';
-import SortingApp from './components/SortingApp';
-import PathfindingApp from './components/PathfindingApp';
+import Sorting from './components/Sorting';
+import Pathfinding from './components/Pathfinding';
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route path='/' element={<Home/>}></Route>
-          <Route path='/sorting' element={<SortingApp/>}></Route>
-          <Route path='/pathfinding' element={<PathfindingApp/>}></Route>
+          <Route path='/sorting' element={<Sorting/>}></Route>
+          <Route path='/pathfinding' element={<Pathfinding/>}></Route>
         </Routes>
       </div>
     </Router>

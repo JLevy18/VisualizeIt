@@ -1,5 +1,3 @@
-
-
 function PathfindingApp(){
     return (
         <div>

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    .settingsBar {
+        @apply w-full h-1/6 bg-neutral-50 shadow-[-2px_0px_15px_2px_rgba(0,0,0,0.5)]
+    }
+
+    .settingsBar button {
+        @apply bg-neutral-200 p-2 rounded-3xl
+    }
+
+    .SortingApp {
+        @apply w-full h-5/6 flex  justify-center items-center 
+    }
+
+    .arrayContainer {
+        @apply flex w-full max-h-fit h-full px-10 py-20 rotate-180 -scale-x-100 justify-center
+    }
+
+    .arrayBar {
+        @apply w-40 bg-sky-600 mx-[.125rem]
+    }
+
+}
