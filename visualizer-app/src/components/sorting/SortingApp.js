@@ -7,35 +7,60 @@ export default class SortingApp extends React.Component {
     constructor(props) {
         super(props);
         
-        this.resetArray = this.resetArray.bind(this)
         this.state = {
             array: [],
-
+            arrayLength: findArrayLength(50),
+            selectedSort: 'mergeSort',
+            sortInProgress: false,
         };
     }
 
 
     componentDidMount() {
-        this.resetArray();
+        this.randomizeArray();
     }
 
-    resetArray() {
+    randomizeArray() {
         const array = [];
-        for(let i = 0; i < 10; i++) {
-            array.push(randomIntFromInterval(5,600));
+        const arrayLength = this.state.arrayLength;
+
+        for(let i = 0; i < arrayLength; i++) {
+            array.push(randomIntFromInterval(20,600));
         }
         this.setState({array});
     }
-
     
+    handleArrayLengthChange (event) {
+        this.setState({arrayLength: findArrayLength(event.target.value)}, this.randomizeArray);
+    }
 
+    handleSortSelection (event) {
+        this.setState({selectedSort: event.target.id});
+    }
+
+    handleSort (event) {
+        this.setState({sortInProgress: true});
+        setTimeout(() => {
+            this.setState({sortInProgress: false});
+        }, 10000);
+    }
+    
     render() {
         
         const {array} = this.state;
+        const {selectedSort} = this.state;
+        const {sortInProgress} = this.state;
 
         return (
         <>
-            <Settings resetArrayClicked={this.resetArray}/>
+            <Settings 
+                handleSort={this.handleSort.bind(this)}
+                handleSortSelection={this.handleSortSelection.bind(this)}
+                handleArrayLengthChange={this.handleArrayLengthChange.bind(this)} 
+                randomizeArrayClicked={this.randomizeArray.bind(this)}
+                sortSelection={selectedSort}
+                isSorting={sortInProgress}
+            />
             <div className='SortingApp'>
                 <div className='arrayContainer'>
                     {array.map((value, index) => (
@@ -53,4 +78,10 @@ export default class SortingApp extends React.Component {
 function randomIntFromInterval(min, max) { 
     // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function findArrayLength (percentage){
+    //value = (percentage * (max - min) / 100) + min
+    // Max: 232, Min: 4
+    return Math.floor((percentage * (210 - 6) / 100) + 6)
 }

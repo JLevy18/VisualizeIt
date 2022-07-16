@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    /* Settings bar layout */
+
+    .settingsBar {
+        @apply w-full h-1/6 p-2 bg-neutral-50 shadow-[-2px_0px_15px_2px_rgba(0,0,0,0.5)]
+    }
+
+
+    .settingsBar .options {
+        @apply flex h-3/4 items-center
+    }
+
+    .settingsBar .options .option{
+        @apply flex m-2
+    }
+
+    .settingsBar .options label{
+        @apply pl-4
+    }
+
+    .settingsBar .options .option label{
+        @apply p-2
+    }
+
+    /* Default button styling */
+
+    .settingsBar .options .option button {
+        @apply h-fit bg-neutral-200 py-2 px-4 rounded-3xl
+    }
+
+    .settingsBar .options .option button:hover {
+        @apply bg-neutral-300
+    }
+
+    /* Sort button styling differs from default */
+    
+    .settingsBar .options .option .sort {
+        @apply bg-blue-500 px-8
+    }
+
+    .settingsBar .options .option .sort:hover {
+        @apply bg-blue-600
+    }
+
+
+    /* Sorting Overlay WHILE SORTING */
+
+    .settingsBar .options .sortingOverlay{
+        @apply hidden
+    }
+
+    .settingsBar .options .isSortingOverlay{
+        @apply absolute flex justify-center items-center w-full h-[12%] left-0 top-11
+        
+        text-center text-white text-5xl tracking-wide text-shadow-lg
+
+        bg-red-600 opacity-90 select-none
+    } 
+
+    /* Algo Buttons */
+
+    .settingsBar .options .option.algo{
+        @apply -m-1
+    }
+
+    /* Selected Sort */
+
+    .settingsBar .options .option #mergeSort.mergeSort, .settingsBar .options .option #bubbleSort.bubbleSort, .settingsBar .options .option #quickSort.quickSort {
+        @apply bg-yellow-500 border-2 border-yellow-600
+    }
+
+    
+
+}
+
+@layer utilities {
+    @variants responsive {
+        .text-shadow {
+          text-shadow: 0px 0px 20px black;
+        }
+        .text-shadow-md {
+          text-shadow: 2px 2px 35px black;
+        }
+        .text-shadow-lg {
+          text-shadow: 4px 4px 10px black;
+        }
+        .text-shadow-none {
+          text-shadow: none;
+        }
+    } 
+} 

@@ -1,4 +1,4 @@
-import SortingApp from "./sorting/SortingApp";
+import SortingApp from "./sorting/SortingApp"
 
 function Sorting(){
     return (
