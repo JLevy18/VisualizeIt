@@ -13,7 +13,7 @@
     }
 
     .arrayBar {
-        @apply w-80 bg-sky-600 mx-[.125rem]
+        @apply w-80 bg-blue-500 mx-[.125rem]
     }
 
 }

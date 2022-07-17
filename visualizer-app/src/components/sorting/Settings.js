@@ -11,7 +11,7 @@ export default class Settings extends React.Component {
                 <div className="settingsBar">
                     <Header/>
                     <div className='options'>
-                        <div className={this.props.isSorting ? 'isSortingOverlay' : 'sortingOverlay'}>Please wait for sorting to complete</div>
+                        <div className={this.props.isSorting ? 'isSortingOverlay' : 'sortingOverlay'}>Sorting</div>
                         <div className='option'>
                             <label htmlFor='sort'/>
                             <button className='sort' onClick={this.props.handleSort}>Sort</button>
@@ -25,6 +25,11 @@ export default class Settings extends React.Component {
                         <div className='option'>
                             <label htmlFor='arrayLength'>Array Length:</label>
                             <input type='range' min='0' max='100' onInput={this.props.handleArrayLengthChange}></input>
+                        </div>
+
+                        <div className='option'>
+                            <label htmlFor='animSpeed'>Animation Speed:</label>
+                            <input type='range' min='0' max='100' onInput={this.props.handleAnimIntervalChange}></input>
                         </div>
 
                         <label htmlFor='Algorithm'>Algorithm:</label>

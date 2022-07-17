@@ -59,7 +59,7 @@
         
         text-center text-white text-5xl tracking-wide text-shadow-lg
 
-        bg-red-600 opacity-90 select-none
+        bg-blue-600 opacity-90 select-none
     } 
 
     /* Algo Buttons */
@@ -71,7 +71,7 @@
     /* Selected Sort */
 
     .settingsBar .options .option #mergeSort.mergeSort, .settingsBar .options .option #bubbleSort.bubbleSort, .settingsBar .options .option #quickSort.quickSort {
-        @apply bg-yellow-500 border-2 border-yellow-600
+        @apply bg-blue-500 border-2 border-blue-600
     }
 
     
